@@ -1,0 +1,10 @@
+fastapi
+strawberry-graphql
+sqlalchemy
+asyncpg
+psycopg2-binary
+pydantic
+uvicorn
+python-dotenv
+alembic
+
