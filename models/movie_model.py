@@ -1,20 +1,16 @@
-from sqlalchemy import Column, String, Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-
-Base = declarative_base()
+from sqlalchemy import Column, String, Integer, Date, Text
+from config.database import Base
 
 class Movie(Base):
     __tablename__ = 'movies'
-    
+
     id = Column(String, primary_key=True, index=True)
     title = Column(String, index=True)
     director = Column(String)
     genre = Column(String)
-    release_date = Column(String)
-    description = Column(String, nullable=True)
+    release_date = Column(Date)
+    description = Column(Text, nullable=True)
     rating = Column(Integer, nullable=True)
-
 
 
 

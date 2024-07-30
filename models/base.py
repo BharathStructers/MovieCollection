@@ -1,1 +1,1 @@
-from .movie_model import Movie
+from models.movie_model import Movie

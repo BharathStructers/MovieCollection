@@ -1,7 +1,8 @@
-from pydantic import BaseModel
 from typing import Optional
+import strawberry
 
-class MovieCreateInput(BaseModel):
+@strawberry.input
+class MovieCreateInput:
     title: str
     director: str
     genre: str
@@ -9,7 +10,8 @@ class MovieCreateInput(BaseModel):
     description: Optional[str] = None
     rating: Optional[int] = None
 
-class MovieUpdateInput(BaseModel):
+@strawberry.input
+class MovieUpdateInput:
     title: Optional[str] = None
     director: Optional[str] = None
     genre: Optional[str] = None
@@ -17,14 +19,6 @@ class MovieUpdateInput(BaseModel):
     description: Optional[str] = None
     rating: Optional[int] = None
 
-class MovieView(BaseModel):
-    id: str
-    title: str
-    director: str
-    genre: str
-    release_date: str
-    description: Optional[str] = None
-    rating: Optional[int] = None
 
 
 
@@ -44,8 +38,7 @@ class MovieView(BaseModel):
 
 
 
-
-# from pydantic import BaseModel
+from pydantic import BaseModel
 # from datetime import datetime
 # from typing import Optional
 
@@ -67,14 +60,14 @@ class MovieView(BaseModel):
 #     description: Optional[str] = None
 #     rating: Optional[int] = None
 
-# class MovieView(BaseModel):
-#     id: str
-#     title: str
-#     director: str
-#     genre: str
-#     release_date: str
-#     description: Optional[str] = None
-#     rating: Optional[int] = None
+class MovieView(BaseModel):
+    id: str
+    title: str
+    director: str
+    genre: str
+    release_date: str
+    description: Optional[str] = None
+    rating: Optional[int] = None
 
 
 
